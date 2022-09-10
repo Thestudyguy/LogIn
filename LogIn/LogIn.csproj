@@ -50,10 +50,22 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\image.png" />
+	  <None Remove="Resources\Raw\111240-task.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="FirebaseDatabase.net" Version="4.1.0" />
+	  <PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.61" />
+	  <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="pages\Page1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="pages\WelcomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

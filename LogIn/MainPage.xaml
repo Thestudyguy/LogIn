@@ -15,10 +15,22 @@
             <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto">
                 <Entry Grid.Column="0" Placeholder="FirstName" VerticalOptions="CenterAndExpand" x:Name="txtfname"/>
                 <Entry  Grid.Column="1" Placeholder="LastName" VerticalOptions="CenterAndExpand" x:Name="txtlname"/>
-                <Entry Grid.Row="1" Grid.Column="0" Placeholder="Age" VerticalOptions="CenterAndExpand" x:Name="txtemail"/>
-                <Entry Grid.Row="1"  Grid.Column="1" Placeholder="Address" VerticalOptions="CenterAndExpand" x:Name="txtpassword"/>
-                <Button Grid.Row="2" Grid.Column="1" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked"/>
-                <Button Grid.Row="2" Grid.Column="0" Text="Cancel"/>
+                <Entry Grid.Row="1" Grid.Column="0" Placeholder="Email" VerticalOptions="CenterAndExpand" x:Name="txtemail"/>
+                <Entry Grid.Row="1"  Grid.Column="1" Placeholder="Password" VerticalOptions="CenterAndExpand" x:Name="txtpassword"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked" />
+                <Button Grid.Row="2" Grid.Column="0" x:Name="cancelbtn" Clicked="cancelbtn_Clicked" Text="Cancel"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto">
+                <Label Grid.Row="2" Grid.Column="1" x:Name="errormessage" FontSize="Medium" FontFamily="Arial" TextColor="#dc3545" IsVisible="true"/>
+                <Label Grid.Row="2" Grid.Column="0" x:Name="passmessage" FontSize="Medium" FontFamily="Arial" TextColor="#dc3545" IsVisible="true"/>
+            </Grid>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Grid>
+                <Label x:Name="netmessage" FontSize="Medium" FontFamily="Arial" TextColor="#dc3545" IsVisible="true"/>
+                
             </Grid>
         </StackLayout>
     </VerticalStackLayout>
