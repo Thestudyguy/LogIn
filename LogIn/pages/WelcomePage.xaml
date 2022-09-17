@@ -13,10 +13,12 @@
             <Label TextColor="WhiteSmoke" FontFamily="sans serif" Text="Manage your daily task" FontSize="Header" 
                FontAttributes="Bold"/>
             <Label Grid.Row="1" TextColor="WhiteSmoke" Text="Team project management"/>
-            <Grid Grid.Row="2" ColumnDefinitions="*,*" Margin="30">
+            <Grid Grid.Row="3" RowDefinitions="*" ColumnDefinitions="*,*" Margin="30">
                 <Button x:Name="btnlogin" Clicked="btnlogin_Clicked" Text="Get Started" BorderColor="#FFDF01" BorderWidth="2" BackgroundColor="Transparent" TextColor="#FFDF01"/>
-                <Button x:Name="btncancel" Clicked="btncancel_Clicked" Grid.Column="1" Text="Cancel" BackgroundColor="#FFDF01" FontSize="Small" TextColor="Black"/>
+                <Button x:Name="SignIn" Clicked="SignIn_Clicked" Grid.Column="1" Text="I already have an account" BackgroundColor="#FFDF01" FontSize="Small" TextColor="Black"/>
             </Grid>
+            
         </Grid>
+       
     </VerticalStackLayout>
 </ContentPage>

@@ -12,13 +12,13 @@
                    />
     </StackLayout>
         <StackLayout Orientation="Vertical" Spacing="5">
-            <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+            <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
                 <Entry Grid.Column="0" Placeholder="FirstName" VerticalOptions="CenterAndExpand" x:Name="txtfname"/>
                 <Entry  Grid.Column="1" Placeholder="LastName" VerticalOptions="CenterAndExpand" x:Name="txtlname"/>
                 <Entry Grid.Row="1" Grid.Column="0" Placeholder="Email" VerticalOptions="CenterAndExpand" x:Name="txtemail"/>
                 <Entry Grid.Row="1"  Grid.Column="1" Placeholder="Password" VerticalOptions="CenterAndExpand" x:Name="txtpassword"/>
-                <Button Grid.Row="2" Grid.Column="1" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked" />
-                <Button Grid.Row="2" Grid.Column="0" x:Name="cancelbtn" Clicked="cancelbtn_Clicked" Text="Cancel"/>
+                <Button Grid.Row="2" Grid.Column="0" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked" />
+                <Button Grid.Row="2" Grid.Column="1" x:Name="cancelbtn" Clicked="cancelbtn_Clicked" Text="Cancel"/>
             </Grid>
         </StackLayout>
         <StackLayout HorizontalOptions="CenterAndExpand">

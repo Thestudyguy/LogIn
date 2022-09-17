@@ -34,8 +34,7 @@ public partial class MainPage : ContentPage
 
 	private async void btnregister_Clicked(object sender, EventArgs e)
 	{
-
-
+       
         //Checks if fields is empty
        var result = await Users.AddUser(txtfname.Text, txtlname.Text, txtemail.Text, txtpassword.Text);
         if (result)

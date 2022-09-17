@@ -14,7 +14,7 @@ namespace LogIn.Model
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        
+
         public async Task<bool> AddUser(string fname, string lname, string email, string password)
         {
             try
@@ -23,7 +23,7 @@ namespace LogIn.Model
                     .Child("Users")
                     .OnceAsync<Users>()).FirstOrDefault
                     (a => a.Object.Email == email);
-                if(evaluateEmail == null)
+                if (evaluateEmail == null)
                 {
                     var users = new Users()
                     {
@@ -37,7 +37,7 @@ namespace LogIn.Model
                         .PostAsync(users);
                     client.Dispose();
                     return true;
-                  
+
                 }
                 else
                 {
@@ -51,5 +51,24 @@ namespace LogIn.Model
                 return false;
             }
         }
+        public async Task<bool> UserLogIn(string email, string password)
+        {
+            try
+            {
+                var evaluateEmail = (await client
+               .Child("Users")
+               .OnceAsync<Users>())
+               .FirstOrDefault
+               (a => a.Object.Email == email && a.Object.Password == password);
+                return evaluateEmail != null;
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }
     }
 }
+   
