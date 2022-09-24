@@ -8,12 +8,13 @@ public partial class NewPage1 : ContentPage
 	{
 		InitializeComponent();
 	}
-
+       
 	private async void btnsignin_Clicked(object sender, EventArgs e)
 	{
-		
+
+        progressLoading.IsVisible = true;
 		var a = await user.UserLogIn(entryEmail.Text, entryPassword.Text);
-        if (entryEmail.Text == null || entryPassword.Text == null)
+        if (string.IsNullOrEmpty(entryEmail.Text) || string.IsNullOrEmpty(entryPassword.Text))
         {
             await DisplayAlert("LogIn", "Missing Fields", "Ok");
            
@@ -21,12 +22,16 @@ public partial class NewPage1 : ContentPage
         if (a)
         {
             await DisplayAlert("LogIn", "Acces Granted", "Ok");
+            Application.Current!.MainPage = new AppShell();
             return;
+            entryEmail.Text = "";
+            entryPassword.Text = "";
         }
 
         else
 		{
             await DisplayAlert("LogIn", "Acces Denied", "Ok");
+            progressLoading.IsVisible = false;
         }
 		
 		

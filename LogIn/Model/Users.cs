@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static LogIn.App;
 using Firebase.Database.Query;
+using System.Collections.ObjectModel;
+using Firebase.Database;
 
 namespace LogIn.Model
 {
@@ -69,6 +71,16 @@ namespace LogIn.Model
 
 
         }
+
+        public ObservableCollection<Users> GetUserList()
+        {
+            var userList = client
+                .Child("Users")
+                .AsObservable<Users>()
+                .AsObservableCollection();
+            return userList;
+        }
     }
+  
 }
    

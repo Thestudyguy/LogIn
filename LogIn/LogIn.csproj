@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\dolphin.png" />
 	  <None Remove="Resources\Images\image.png" />
 	  <None Remove="Resources\Raw\111240-task.json" />
 	</ItemGroup>
@@ -60,6 +61,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="pages\NewPage1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
