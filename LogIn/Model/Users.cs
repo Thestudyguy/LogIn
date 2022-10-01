@@ -80,6 +80,22 @@ namespace LogIn.Model
                 .AsObservableCollection();
             return userList;
         }
+
+        public async Task<string> GetUserKey(string mail)
+        {
+            try
+            {
+                var getuserkey = (await client
+                    .Child("Users")
+                    .OnceAsync<Users>()).FirstOrDefault
+                    (a => a.Object.Email == mail);
+                    return getuserkey?.Key;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
   
 }

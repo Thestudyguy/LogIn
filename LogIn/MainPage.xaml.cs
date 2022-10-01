@@ -21,7 +21,7 @@ public partial class MainPage : ContentPage
     }
     /* private async void InternetConnection()
     {
-       if (CrossConnectivity.Current.IsConnected)
+       if (!CrossConnectivity.Current.IsConnected)
         {
             await DisplayAlert("Info", "Registered Succesfuly", "OK");
         }

@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LogIn.pages.HomePage"
              Title="HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="edit.png"
+                     Text="Modify"
+                     x:Name="edititem" Clicked="edititem_Clicked"
+                     Order="Secondary"/>
+    </ContentPage.ToolbarItems>
     <Grid RowDefinitions="Auto,Auto,Auto,*">
         <Frame HeightRequest="100" CornerRadius="0" BackgroundColor="{StaticResource FrameColor_1}"
                Margin="0,0,0,0"/>
@@ -16,14 +22,14 @@
                    PlaceholderColor="{StaticResource TextSoft}"/>
         <Label Grid.Row="2" BackgroundColor="{StaticResource Primary}" x:Name="loader" TextColor="{StaticResource TextSoft}"
                HorizontalOptions="CenterAndExpand"/>
-        <CollectionView Grid.Row="3" x:Name="ListUsers">
+        <CollectionView Grid.Row="3" x:Name="ListUsers" SelectionMode="Single" SelectionChanged="ListUsers_SelectionChanged">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="1" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <ContentView Padding="2">
-                        <SwipeView HeightRequest="96" WidthRequest="50" BackgroundColor="Transparent"
+                        <!--<SwipeView HeightRequest="96" WidthRequest="50" BackgroundColor="Transparent"
                                                        IsClippedToBounds="True">
                             <SwipeView.LeftItems>
                                 <SwipeItems Mode="Execute">
@@ -42,9 +48,9 @@
                                         </StackLayout>
                                     </SwipeItemView>
                                 </SwipeItems>
-                            </SwipeView.LeftItems>
-                            <Frame CornerRadius="10" HeightRequest="95" Padding="0" Margin="2" IsClippedToBounds="True"
-                                               BackgroundColor="{StaticResource Primary}" HasShadow="False">
+                            </SwipeView.LeftItems>-->
+                            <Border HeightRequest="95" Padding="0" Margin="2"
+                                               BackgroundColor="{StaticResource Primary}">
                                 <!--Must add expander so the client can view if the renter has an advance payment-->
                                 <Grid ColumnDefinitions="Auto, *">
                                     <Line Grid.Column="0" WidthRequest="5" BackgroundColor="{StaticResource ButtonColor}"/>
@@ -81,8 +87,8 @@
                                         </Grid>
                                     </StackLayout>
                                 </Grid>
-                            </Frame>
-                        </SwipeView>
+                            </Border>
+                      <!--</SwipeView>-->
                     </ContentView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
