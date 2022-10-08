@@ -5,7 +5,7 @@ namespace LogIn;
 public partial class App : Application
 {
 	public static FirebaseClient client = new("https://sampledb-b355e-default-rtdb.asia-southeast1.firebasedatabase.app/");
-	public static string email, key;
+	public static string email, key, firstname, lastname, password;
 	public App()
 	{
 		InitializeComponent();

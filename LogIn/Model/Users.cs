@@ -17,6 +17,56 @@ namespace LogIn.Model
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public async Task<string> DeleteData()
+        {
+            try
+            {
+                await client
+                    .Child($"Users/{key}")
+                    .DeleteAsync(); 
+                     return "Removed";
+            }
+            catch(Exception ex)
+            {
+                return "Error";
+            }
+        }
+
+        public async Task<bool> EditData(string fname, string lname, string pwrd)
+        {
+            try
+            {
+                var evaluateuser = (await client
+                    .Child("Users")
+                    .OnceAsync<Users>()).FirstOrDefault
+                    (a => a.Object.Email == email);
+
+                if(evaluateuser != null)
+                {
+                    Users user = new Users
+                    {
+                        Email = email,
+                        FirstName = fname,
+                        LastName = lname,
+                        Password = pwrd
+                    };
+                    await client
+                        .Child("Users")
+                        .Child(key)
+                        .PatchAsync(user);
+                         client.Dispose();
+                         return true;
+                }
+                client.Dispose();
+                return false;
+            }
+            catch(Exception e)
+            {
+                client.Dispose();
+                return false;
+            }
+        }
+
         public async Task<bool> AddUser(string fname, string lname, string email, string password)
         {
             try
@@ -89,6 +139,10 @@ namespace LogIn.Model
                     .Child("Users")
                     .OnceAsync<Users>()).FirstOrDefault
                     (a => a.Object.Email == mail);
+                if (getuserkey == null) return null;
+                firstname = getuserkey.Object.FirstName;
+                lastname = getuserkey.Object.LastName;
+                password = getuserkey.Object.Password;
                     return getuserkey?.Key;
             }
             catch (Exception e)

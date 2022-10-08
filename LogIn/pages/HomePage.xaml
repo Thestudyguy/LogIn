@@ -8,6 +8,10 @@
                      Text="Modify"
                      x:Name="edititem" Clicked="edititem_Clicked"
                      Order="Secondary"/>
+        <ToolbarItem IconImageSource="edit.png"
+                     Text="Delete"
+                     x:Name="Deleteitem" Clicked="Deleteitem_Clicked"
+                     Order="Secondary"/>
     </ContentPage.ToolbarItems>
     <Grid RowDefinitions="Auto,Auto,Auto,*">
         <Frame HeightRequest="100" CornerRadius="0" BackgroundColor="{StaticResource FrameColor_1}"
@@ -49,7 +53,7 @@
                                     </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.LeftItems>-->
-                            <Border HeightRequest="95" Padding="0" Margin="2"
+                            <Border HeightRequest="150" Padding="0" Margin="2"
                                                BackgroundColor="{StaticResource Primary}">
                                 <!--Must add expander so the client can view if the renter has an advance payment-->
                                 <Grid ColumnDefinitions="Auto, *">
@@ -58,7 +62,7 @@
                                                  BackgroundColor="Transparent">
                                         <Grid RowSpacing="0" RowDefinitions="Auto, Auto, Auto"
                                               ColumnDefinitions="Auto, *">
-                                            <Label VerticalOptions="CenterAndExpand" Text="First Name:"
+                                            <Label Margin="10, 10, 10, 10" VerticalOptions="CenterAndExpand" Text="First Name:"
                                                    TextColor="{StaticResource TextSoft}"
                                                    FontSize="Medium" LineBreakMode="TailTruncation"
                                                    HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" />
@@ -67,24 +71,26 @@
                                                    FontAttributes="Bold" LineBreakMode="TailTruncation"
                                                    TextColor="{StaticResource TextColorWhite}" />
 
-                                            <Label VerticalOptions="CenterAndExpand" Text="School name:"
+                                            <Label VerticalOptions="CenterAndExpand" Text="Last Name:"  
                                                    TextColor="{StaticResource TextSoft}"
                                                    FontSize="Medium"
                                                    HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" />
-                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding SchoolName}"
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"
                                                    FontSize="Medium"
                                                    FontAttributes="Bold" LineBreakMode="TailTruncation"
                                                    TextColor="{StaticResource TextColorWhite}" />
 
-                                            <Label VerticalOptions="CenterAndExpand" Text="School address:"
+                                        <Label VerticalOptions="CenterAndExpand" Text="Email:"
                                                    TextColor="{StaticResource TextSoft}"
                                                    FontSize="Medium"
                                                    HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" />
-                                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding SchoolAddress}"
+                                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Email}"
                                                    FontSize="Medium"
                                                    FontAttributes="Bold" LineBreakMode="TailTruncation"
                                                    TextColor="{StaticResource TextColorWhite}" />
-                                        </Grid>
+
+                                      
+                                    </Grid>
                                     </StackLayout>
                                 </Grid>
                             </Border>

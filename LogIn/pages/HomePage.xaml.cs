@@ -31,4 +31,14 @@ public partial class HomePage : ContentPage
 			await DisplayAlert("Data", "Select item to modify", "Shesh!");
 		}
 	}
+
+	private async void Deleteitem_Clicked(object sender, EventArgs e)
+	{
+
+		var result = await DisplayAlert("Information", "Are you sure you want to delete this?", "Yes", "No");
+		if (result)
+		{
+			await userlist.DeleteData();
+		}
+	}
 }

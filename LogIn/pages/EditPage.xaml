@@ -12,25 +12,29 @@
             <Frame CornerRadius="10" Grid.Row="1" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource FrameColor_1}">
                 <Grid Margin="10" RowDefinitions="Auto,Auto">
                     <Grid Grid.Row="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
-                        <Entry Grid.Row="0" Placeholder="School ID" BackgroundColor="{StaticResource FrameColor_1}" 
-                               x:Name="entryschid" IsEnabled="False"
+                        <Entry Grid.Row="0" Placeholder="First Name" BackgroundColor="{StaticResource FrameColor_1}" 
+                               x:Name="entryFirstName"
                                PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
-                        <Entry Grid.Row="1" Placeholder="School Name" BackgroundColor="{StaticResource FrameColor_1}"
-                               x:Name="entryschname"
+                        <Entry Grid.Row="1" Placeholder="Last Name" BackgroundColor="{StaticResource FrameColor_1}"
+                               x:Name="entryLastName"
                                PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
-                        <Entry Grid.Row="2" Placeholder="School Address" BackgroundColor="{StaticResource FrameColor_1}"
-                               x:Name="entryschaddress"
+                        <Entry Grid.Row="2" Placeholder="Password" BackgroundColor="{StaticResource FrameColor_1}"
+                               x:Name="entryPassword"
                                PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
-                        <Entry Grid.Row="3" Placeholder="Subscription" BackgroundColor="{StaticResource FrameColor_1}"
+                        <!--<Entry Grid.Row="2" Placeholder="Last Name" BackgroundColor="{StaticResource FrameColor_1}"
+                               x:Name="entryLastName"
+                               PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
+           <Entry Grid.Row="3" Placeholder="Subscription" BackgroundColor="{StaticResource FrameColor_1}"
                                x:Name="entrysubscription"
                                PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
-                        <Entry Grid.Row="4" Placeholder="Status" BackgroundColor="{StaticResource FrameColor_1}"
-                               x:Name="entrystatus"
-                               PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>
+                        <Entry Grid.Row="4" Placeholder="Email" BackgroundColor="{StaticResource FrameColor_1}"
+                               x:Name="entryEmail"
+                               PlaceholderColor="{StaticResource TextSoft}" TextColor="{StaticResource TextColorWhite}"/>-->             
                     </Grid>
-                    <Button Grid.Row="1" BackgroundColor="{StaticResource ButtonColor}"
+
+                    <Button Grid.Row="3" Grid.Column="0" BackgroundColor="{StaticResource ButtonColor}"
                             Text="Modify" TextTransform="None" TextColor="{StaticResource TextColorBlack}"
-                            x:Name="btnmodify" CornerRadius="8"/>
+                            x:Name="btnmodify" Clicked="btnmodify_Clicked" CornerRadius="8"/>
                 </Grid>
             </Frame>
         </Grid>

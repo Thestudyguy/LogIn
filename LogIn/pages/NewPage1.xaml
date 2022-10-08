@@ -4,6 +4,8 @@
              x:Class="LogIn.pages.NewPage1"
              Title="NewPage1">
     <ScrollView>
+
+
         <AbsoluteLayout>
             <Grid VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1"
               AbsoluteLayout.LayoutFlags="All">
@@ -55,7 +57,7 @@
                                 <Image Grid.Column="0" Margin="5" Source="lock" />
                                 <Entry Grid.Column="1" x:Name="entryPassword"
                                        BackgroundColor="{StaticResource FrameColor_1}"
-                                       IsPassword="True" Keyboard="Numeric"
+                                       IsPassword="True"
                                        Placeholder="Password" TextColor="{StaticResource TextColorWhite}"
                                        PlaceholderColor="{StaticResource TextSoft}" />
                             </Grid>

@@ -31,12 +31,9 @@ public partial class MainPage : ContentPage
         }
 }*/
     Users Users = new Users();
-
-	private async void btnregister_Clicked(object sender, EventArgs e)
-	{
-       
-        //Checks if fields is empty
-       var result = await Users.AddUser(txtfname.Text, txtlname.Text, txtemail.Text, txtpassword.Text);
+    public async void Insert()
+    {
+        var result = await Users.AddUser(txtfname.Text, txtlname.Text, txtemail.Text, txtpassword.Text);
         if (result)
         {
             await DisplayAlert("Info", "Registered Succesfuly", "OK");
@@ -46,37 +43,33 @@ public partial class MainPage : ContentPage
             txtpassword.Text = "";
             errormessage.Text = "";
             passmessage.Text = "";
-
-        } else if (txtfname.Text == null || txtlname.Text == null || txtemail.Text == null || txtpassword.Text == null)
-        {
-            errormessage.Text = "Please Fill All Fields";
         }
         else
         {
             await DisplayAlert("Error", "Registered not Succesfuly", "OK");
         }
+    }
 
+	private async void btnregister_Clicked(object sender, EventArgs e)
+	{   
+        //Checks if fields is empty
+        var fname = txtfname.Text;
+        var lname = txtlname.Text;
+        var email = txtemail.Text;
+        var password = txtpassword.Text;
+        if (string.IsNullOrEmpty(fname) ||
+           string.IsNullOrEmpty(lname) ||
+           string.IsNullOrEmpty(email) ||
+           string.IsNullOrEmpty(password))
+        {
+            await DisplayAlert("Information", "Missing Fields", "Ok");
+           
 
-        /*if (txtfname.Text == null || txtlname.Text == null || txtemail.Text == null || txtpassword.Text == null)
-		{
-            errormessage.Text = "Please Fill All Fields";
         }
-        
-        //if fields are filled data entry will be registered
         else
         {
-            InternetConnection();
-            await Users.AddUser(txtfname.Text, txtlname.Text, txtemail.Text, txtpassword.Text);
-            txtemail.Text = "";
-            txtfname.Text = "";
-            txtlname.Text = "";
-            txtpassword.Text = "";
-            errormessage.Text = "";
-            passmessage.Text = "";
-
+            Insert();
         }
-        //<!---->*/
-
     }
 
     private async void cancelbtn_Clicked(object sender, EventArgs e)

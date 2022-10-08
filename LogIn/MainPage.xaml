@@ -12,13 +12,13 @@
                    />
     </StackLayout>
         <StackLayout Orientation="Vertical" Spacing="5">
-            <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
-                <Entry Grid.Column="0" Placeholder="FirstName" VerticalOptions="CenterAndExpand" x:Name="txtfname"/>
-                <Entry  Grid.Column="1" Placeholder="LastName" VerticalOptions="CenterAndExpand" x:Name="txtlname"/>
-                <Entry Grid.Row="1" Grid.Column="0" Placeholder="Email" VerticalOptions="CenterAndExpand" x:Name="txtemail"/>
-                <Entry Grid.Row="1"  Grid.Column="1" Placeholder="Password" VerticalOptions="CenterAndExpand" x:Name="txtpassword"/>
-                <Button Grid.Row="2" Grid.Column="0" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked" />
-                <Button Grid.Row="2" Grid.Column="1" x:Name="cancelbtn" Clicked="cancelbtn_Clicked" Text="Cancel"/>
+            <Grid ColumnDefinitions="*" RowDefinitions="*,*, *, *, *, *" Margin="15, 15, 15, 15">
+                <Entry Margin="0, 0, 0, 10" Grid.Column="0" Grid.Row="0" Placeholder="FirstName" VerticalOptions="CenterAndExpand" x:Name="txtfname"/>
+                <Entry Margin="0, 0, 0, 10"  Grid.Row="1" Grid.Column="1" Placeholder="LastName" VerticalOptions="CenterAndExpand" x:Name="txtlname"/>
+                <Entry Margin="0, 0, 0, 10" Grid.Row="2" Grid.Column="2" Placeholder="Email" VerticalOptions="CenterAndExpand" x:Name="txtemail"/>
+                <Entry Margin="0, 0, 0, 10" Grid.Row="3"  Grid.Column="3" Placeholder="Password" VerticalOptions="CenterAndExpand" x:Name="txtpassword"/>
+                <Button Grid.Row="4" Grid.Column="4" Text="Register" x:Name="btnregister" Clicked="btnregister_Clicked" />
+                <Button Grid.Row="5" Grid.Column="5" x:Name="cancelbtn" Clicked="cancelbtn_Clicked" Text="Cancel"/>
             </Grid>
         </StackLayout>
         <StackLayout HorizontalOptions="CenterAndExpand">
